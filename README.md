@@ -1,4 +1,0 @@
-ctrucza.github.io
-=================
-
-blog
