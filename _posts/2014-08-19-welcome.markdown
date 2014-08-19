@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2014-08-19 12:15:41
+categories: general
+---
+Here are my writings. About programming and stuff. Sometimes about brains and thinking machines. But mostly about programming.
+
