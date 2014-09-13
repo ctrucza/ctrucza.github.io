@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Drive-by refactoring: Abused Exceptions"
+title:  "Drive-by refactoring: Abusing Exceptions"
 date:   2014-08-19 12:15:41
-categories: drive-by refactoring, exceptions
+categories:
 ---
 
 Here is a code I was reviewing these days:
