@@ -2,7 +2,7 @@
 layout: post
 title:  "My way to DAL"
 date:   2014-08-19 12:15:41
-categories: design, EF
+categories: 
 ---
 
 Repositories
