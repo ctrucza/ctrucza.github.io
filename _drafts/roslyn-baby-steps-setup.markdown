@@ -5,7 +5,7 @@ date:   2014-08-19 12:15:41
 categories: 
 ---
 
-You will need Visual Studio (2013, 2014 CTP 3 as of now).
+You will need Visual Studio (2013, 2014 CTP 4 as of now).
 
 VS 2013 and VS 14 will need different downloads. Based on [a discussion on the forums](https://roslyn.codeplex.com/discussions/547581) I choose to go with the VS 14 CTP, as the VS 2013 preview will not be updated.
 

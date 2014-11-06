@@ -10,7 +10,10 @@ Open a solution
 
 {% highlight C# %}
 var workspace = MSBuildWorkspace.Create();
+
 var solution = workspace.OpenSolutionAsync(path).Result;
 solution.Projects.ForEach()
-var project = w.OpenProjectAsync(@"").Result;
+
+var project = workspace.OpenProjectAsync(@"").Result;
+
 {% endhighlight %}
