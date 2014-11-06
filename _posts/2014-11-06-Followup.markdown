@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "Followup"
+date:   2014-11-06 14:53:41
+categories:
+---
+In the last days I held presentations at several universities to students in informatics and programming. We talked about what they can do during their student years to build up as much skills as possible before graduating.
+
+Here are some of the resources I talked about:
+
+Practice
+---
+- [Exercism](http://www.exercism.io)
+- [CodeKata](http://www.codekata.org)
+- [Code Retreats](http://www.coderetreat.org)
+
+Challenge
+---
+- [TopCoder](http://www.topcoder.com/tc)
+- [Google Code Jam](https://code.google.com/codejam)
+
+Books
+---
+I consider that reading books is one of the most important things a programmer can do to boost it's knowledge. During the last 25 years I've read hundreds of books, most of which were not worth the effort. the books below are the ones which stood the test of time.
+
+I list them in the order I would read them if I would start over my carreer.
+
+The first books I recommend to programmers lay the foundation of writing code and developing applications:
+
+- [Writing Solid Code](http://www.amazon.com/Writing-Solid-Code-Anniversary-Edition/dp/1570740550)
+- [Code Complete (Second Edition)](http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670)
+
+If someone is so inclined the following two books get into details of various programming techniques:
+
+- [Programming Pearls](http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
+- [More Programming Pearls](http://www.amazon.com/More-Programming-Pearls-Confessions-Coder/dp/0201118890)
+
+The next three books build upon the fundamentals and deal with the more nuanced (and more important) aspects of writing code:
+
+- [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+- [Refactoring](http://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672)
+- [Rapid Development](http://www.amazon.com/Rapid-Development-Taming-Software-Schedules/dp/1556159005)
+
+As one accumulates experience, one can start looking at the bigger picture: habits, techniques, patterns, processes, design, architecture:
+
+- [The Pragmatic Programmer](http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
+- [C++ Coding Standards](http://www.amazon.com/Coding-Standards-Rules-Guidelines-Practices/dp/0321113586)
+- [Applying UML and Patterns](http://www.amazon.com/Applying-UML-Patterns-Introduction-Object-Oriented/dp/0131489062)
+- [Object Oriented Programming](http://www.amazon.com/Object-Oriented-Programming-Peter-Coad/dp/013032616X)
+- [Software Architecture for developers](https://leanpub.com/software-architecture-for-developers)
+
+All programmers should know and understand project management fundamentals in software projects. The following two books cover most of the problems one encounters:
+
+- [Software project survival guide](http://www.amazon.com/Software-Project-Survival-Developer-Practices/dp/1572316217)
+- [Debugging the Development Process](http://www.amazon.com/Debugging-Development-Process-Practical-Strategies/dp/1556156502)
+
+The last bunch of books are on varied topics, all helping one in advancing one's carreer:
+
+- [The Clean Coder](http://www.amazon.com/The-Clean-Coder-Professional-Programmers/dp/0137081073)
+- [Peopleware](http://www.amazon.com/Peopleware-Productive-Projects-Second-Edition/dp/0932633439)
+- [The Mythical Man-Month](http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959) 
+- [Slack](http://www.amazon.com/Slack-Getting-Burnout-Busywork-Efficiency/dp/0932633617)
+
+Videos
+---
+- Conferences:
+    - [NDC Oslo](http://vimeo.com/ndcoslo/videos)
+- Kevlin Henney
+    - [How to Write a Method (JavaZone)](http://vimeo.com/74316116)
+    - [Programming with GUTs (Agile Prague 2014)](http://vimeo.com/108007508)
+    - [Seven Ineffective Coding Habits of Many Programmers](http://vimeo.com/97329157)
+    - [Cool Code](http://vimeo.com/28772428)
+- Simon Brown
+- Uncle Bob
+    - [Advanced TDD: The Transformation Priority Premise](http://vimeo.com/97516288)
+    - [Clean Architecture](http://vimeo.com/43612849)
+- Katrina Owen
+    - [Panic, Practice and Process](http://vimeo.com/52325466)
+    - [Therapeutic Refactoring](http://vimeo.com/51634446)
+    - [Overkill (RubyConf Portugal 2014)](https://www.youtube.com/watch?v=GWEEPt8VvmU)
+- James Shore
+    - [Let's Play: Test-driven Development](https://www.youtube.com/playlist?list=PL0CCC6BD6AFF097B1)
+- Venkat Subramaniam
+    - [Core Software Design Principles](http://vimeo.com/97541185)
+- Douglas Crockford
+    - [The Better Parts (JSConfUY 2014)](https://www.youtube.com/watch?v=bo36MrBfTk4)
+- Kent Beck
+    - [Software Design: Why, When & How (JavaZone 2014)](http://vimeo.com/105771493) 
