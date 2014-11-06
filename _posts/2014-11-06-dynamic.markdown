@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "A different kind of runtime polymorphism"
+date:   2014-11-06 14:27:41
+categories:
+---
+
+Let's start with toy problem: you have a basket which contains fruits and you want to iterate over all the fruits and do something different with each type of fruit. 
+
+A trivial implementation looks something like this:
+
+{% highlight C# %}
+class Fruit
+{
+    public virtual Eat()
+    {
+        Console.WriteLine("Eating some unknown fruit");
+    }
+}
+
+class Apple : Fruit
+{
+    public override Eat()
+    {
+        Console.WriteLine("Eating an apple");
+    }
+}
+
+class Orange : Fruit
+{
+    public virtual Eat()
+    {
+        Console.WriteLine("Eating an orange");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<Fruit> basket = new List<Fruit>();
+        basket.Add(new Apple());
+        basket.Add(new Orange());
+
+        basket.ForEach(f => f.Eat());
+    }
+}
+{% endhighlight %}
+
+This is great when you control the `Fruit` class hierarchy.
+
+What can you do when the `Fruit` hierarchy is out of your control? And it has no `Eat` method?
+
+You could try overloads
+
+{% highlight C# %}
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<Fruit> basket = new List<Fruit>();
+        basket.Add(new Apple());
+        basket.Add(new Orange());
+
+        basket.ForEach(Eat);
+    }
+    
+    static void Eat(Fruit fruit)
+    {
+        Console.WriteLine("Eating some unknown fruit");
+    }
+    
+    static void Eat(Apple apple)
+    {
+        Console.WriteLine("Eating an apple");
+    }
+    
+    static void Eat(Orange orange)
+    {
+        Console.WriteLine("Eating an orange");
+    }
+}
+{% endhighlight %}
+
+unfortunately it will just call the `Fruit` kind of overload:
+
+<pre>
+Eating some unknown fruit
+Eating some unknown fruit
+</pre>
+
+`dynamic` to the rescue:
+
+{% highlight C# %}
+        basket.ForEach(fruit => Eat((dynamic)fruit);
+{% endhighlight %}
+
+results in
+
+<pre>
+Eating an apple
+Eating an orange
+</pre>
+
