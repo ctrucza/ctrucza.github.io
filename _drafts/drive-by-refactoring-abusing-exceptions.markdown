@@ -48,6 +48,7 @@ public void SetAccountEnabled(string accountName, bool enabled)
                 Enabled = enabled
             };
         accounts.Add(account);
+        SaveChanges();
     }
     account.Enabled = enabled;
     SaveChanges();
@@ -201,3 +202,99 @@ public void DisableAccount(string accountName)
     SaveChanges();
 }
 {% endhighlight %}
+
+Even more hiding
+--
+
+From the usage, we can figure out the Account and AccountRepository class interfaces:
+
+{% highlight C# %}
+public class Account
+{
+    public string Name;
+    public bool Enabled;
+}
+
+public class AccountRepository
+{
+    public void Add(Account account){
+        //...
+    }
+}
+
+{% endhighlight %}
+
+The `Account` class is anemic. Let's give it some soul:
+
+{% highlight C# %}
+public class Account
+{
+    private string name;
+    private bool enabled;
+    
+    public Account(string name)
+    {
+        this.name = name;
+    }
+    
+    public void Enable()
+    {
+        enabled = true;
+    }
+    
+    public void Disable()
+    {
+        enabled = false;
+    }
+}
+
+{% endhighlight %}
+
+The `AccountRepository` could also take some more fine tuned responsibilities:
+
+{% highlight C# %}
+public class AccountRepository
+{
+    public Account CreateAccount(string accountName){
+        Account account = new Account(accountName);
+        Add(account); // make the original Add(Account account) private if can
+        return account;
+    }
+    
+    public void GetAccount(string accountName)
+    {
+        return SingleOrDefault(a => a.Name == accountName);
+    }
+}
+
+{% endhighlight %}
+
+Then our code will look like this:
+
+{% highlight C# %}
+private Account GetOrCreateAccount(string accountName)
+{
+    Account account = accounts.GetAccount(accountName);
+    if ( account == null)
+    {
+        account = accounts.CreateAccount(accountName);
+    }
+    return account;
+}
+
+public void EnableAccount(string accountName)
+{
+    var account = GetOrCreateAccount(accountName);
+    account.Enable();
+    SaveChanges();
+}
+
+public void DisableAccount(string accountName)
+{
+    var account = GetOrCreateAccount(accountName);
+    account.Disable();
+    SaveChanges();
+}
+{% endhighlight %}
+
+Now, if we could just get rid of the `GetOrCreateAccount` this code would look good.
