@@ -1,24 +1,64 @@
 ---
 layout: post
-title:  "Roslyn Baby Steps: Getting Started"
-date:   2014-08-19 12:15:41
+title:  "Roslyn Baby Steps: Setup"
+#date:   2014-08-19 12:15:41
 categories: 
 ---
 
-You will need Visual Studio (2013, 2014 CTP 4 as of now).
+To start playing with Roslyn, you will need Visual Studio 2013 or 2015 Preview, and you will have to install the Roslyn Nuget package.
 
-VS 2013 and VS 14 will need different downloads. Based on [a discussion on the forums](https://roslyn.codeplex.com/discussions/547581) I choose to go with the VS 14 CTP, as the VS 2013 preview will not be updated.
+In the package manager console:
 
-I will try to see how the code works in VS 2013 but the development will be primarily on VS 14 CTP. Living on the edge, eh?
+`Install-Package Microsoft.CodeAnalysis -Pre`
 
-to get the bits: `Install-Package Microsoft.CodeAnalysis -Pre` in the Package Manager Console
+This will download the needed assemblies and and them to your project references . Review them and remove the ones you don't need. As I work only in C#, I removed all VisualBasic related assemblies.
+
+Let's give it a try:
+
+{% highlight C# %}
+using System;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.Text;
+
+namespace SettingUp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tree = CSharpSyntaxTree.ParseText(@"
+                public class Foo
+                {
+                    public int Bar()
+                    {
+                        return 42;
+                    }
+                }
+            ");
+
+            foreach (TextLine line in tree.GetText().Lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }
+}
+{% endhighlight %}
+
+If you are greeted with an exception
+
+`Unhandled Exception: System.IO.FileNotFoundException: Could not load file or assembly 'System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'`
+
+or similar, [you need to install another package](http://stackoverflow.com/questions/25658599/where-is-the-system-composition-typedparts-dll):
+
+`Install-Package Microsoft.Composition`
 
 ---
 Next baby-steps:
 
-- [Workspaces](roslyn-baby-steps-workspaces)
-- [Syntax Analysis](roslyn-baby-steps-syntax-analysis)
-- [Semantic Analysis](roslyn-baby-steps-semantic-analysis)
+- [Workspaces, Solutions and Projects](roslyn-baby-steps-workspaces-solutions-and-projects.html)
+- [Syntax Analysis](roslyn-baby-steps-syntax-analysis.html)
+- [Semantic Analysis](roslyn-baby-steps-semantic-analysis.html)
 
 ---
 
