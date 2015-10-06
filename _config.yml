@@ -9,4 +9,5 @@ twitter_username: ctrucza
 github_username:  ctrucza
 
 # Build settings
+highlighter: true
 markdown: kramdown

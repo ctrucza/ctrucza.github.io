@@ -7,7 +7,7 @@ categories:
 
 `bundle exec jekyll serve`
 
-
+`bundle exec jekyll serve --drafts`
 
 if main.css missing:
 

@@ -5,7 +5,7 @@ title:  "Roslyn Baby Steps: Syntax Analysis"
 categories:
 ---
 
-Once you [get access to the documents of a project of a solution]() it's time to do some woodoo magic.
+Once you [get access to the documents of a project of a solution]() it's time to do some Roslyn sorcery.
 
 Let's review how we get to a document:
 
@@ -76,7 +76,7 @@ If you wish, you can also look at a graph of a node:
 Finding stuff in the syntax tree
 ---
 
-Let's try to do something more useful: find all class declarations in the solution:
+Let's try to do something more useful: find all class declarations in the document:
 
 {% highlight C# %}
 private static void DumpDocument(Document document)
@@ -91,7 +91,7 @@ private static void DumpDocument(Document document)
 }
 {% endhighlight %}
 
-Or all the methods in the solution:
+Or all the methods in the document:
 
 {% highlight C# %}
 private static void DumpDocument(Document document)

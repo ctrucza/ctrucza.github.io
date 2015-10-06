@@ -5,9 +5,7 @@ title:  "Roslyn Baby Steps: Setup"
 categories: 
 ---
 
-To start playing with Roslyn, you will need Visual Studio 2013 or 2015 Preview, and you will have to install the Roslyn Nuget package.
-
-In the package manager console:
+To start playing with Roslyn, you will need Visual Studio 2013 or 2015 Preview, and you will have to install the Roslyn Nuget package from the package manager console:
 
 `Install-Package Microsoft.CodeAnalysis -Pre`
 
@@ -53,6 +51,20 @@ or similar, [you need to install another package](http://stackoverflow.com/quest
 
 `Install-Package Microsoft.Composition`
 
+Another exception you might get when creating a workspace (see later)
+
+{% highlight C# %}
+    var workspace = MSBuildWorkspace.Create();
+{% endhighlight %}
+
+is a `Could not load file or assembly 'Microsoft.Build`. In this case you ahve to install the Microsoft Build Tools:
+- VS 2013: [Microsoft Build Tools 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40760) (or search for Microsoft Build Tools 2013)
+- VS 2015: ???
+
+System.Reflection.ReflectionTypeLoadException
+Could not load file or assembly 'Microsoft.Build
+
+
 ---
 Next baby-steps:
 
@@ -70,5 +82,5 @@ Useful links:
 - [Samples and Walkthroughs](https://roslyn.codeplex.com/wikipage?title=Samples%20and%20Walkthroughs)
     - [Syntax Analysis in C# (pdf)](https://www.codeplex.com/Download?ProjectName=roslyn&DownloadId=822179)
     - [Semantic Analysis in C# (pdf)](https://www.codeplex.com/Download?ProjectName=roslyn&DownloadId=822179)
-- [Sources](http://source.roslyn.codeplex.com/)
-    - [Building, Testing and Debugging](https://roslyn.codeplex.com/wikipage?title=Building%2c%20Testing%20and%20Debugging)
+- [Roslyn source code on codeplex](http://source.roslyn.codeplex.com/)
+    - [Building, Testing and Debugging Roslyn](https://roslyn.codeplex.com/wikipage?title=Building%2c%20Testing%20and%20Debugging)

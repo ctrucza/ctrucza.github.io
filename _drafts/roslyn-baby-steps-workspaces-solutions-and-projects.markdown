@@ -44,7 +44,7 @@ Project project = workspace.OpenProjectAsync(projectFilePath).Result;
 DumpProject(project);
 {% endhighlight %}
 
-Once you nave a reference to a project you can get the source files:
+Once you have a reference to a project you can get the source files:
 
 {% highlight C# %}
 foreach (var document in project.Documents)
@@ -54,7 +54,7 @@ foreach (var document in project.Documents)
 }
 {% endhighlight %}
 
-And finally the `Document` gives you access toall the Roslyn goodies. For example to get all the classes in a file you would write this:
+And finally the `Document` gives you access to all the Roslyn goodies. For example to get all the classes in a file you would write this:
 
 {% highlight C# %}
 var root = document.GetSyntaxRootAsync().Result;
